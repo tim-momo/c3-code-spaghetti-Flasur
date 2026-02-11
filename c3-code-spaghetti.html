@@ -1,191 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
+  <head>
     <!-- Questionnaire à l'adresse suivante: https://forms.office.com/r/j3FyHzC6pk -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carte Produit</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body{
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            font-family: "Poppins", sans-serif;
-        }
-        .c {
-            width: 300px;
-            border: 1px solid #b6b6be;
-            padding: 20px;
-            margin: 20px;
-            background: white;
-            border-radius: 8px;
-        }
-        .c img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        .c h2 {
-            font-size: 24px;
-            color: #2c3e50;
-            margin: 15px 0 10px 0;
-            font-weight: 600;
-        }
-        .c p {
-            font-size: 14px;
-            color: #7f8c8d;
-            margin: 0 0 15px 0;
-            line-height: 1.6;
-        }
-        .c .p {
-            font-size: 20px;
-            color: #27ae60;
-            font-weight: bold;
-            margin: 0 0 15px 0;
-        }
-        .c button {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 14px;
-            width: 100%;
-        }
-        .c button:hover {
-            background: #2980b9;
-        }
-        .badge {
-            display: inline-block;
-            background: #e74c3c;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-size: 10px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .c2 {
-            width: 300px;
-            border: 1px solid #b6b6be;
-            padding: 20px;
-            margin: 20px;
-            background: white;
-            border-radius: 8px;
-            display: flex;
-            gap: 15px;
-        }
-        .c2 img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        .c2 h3 {
-            font-size: 14px;
-            color: #2c3e50;
-            margin: 0 0 8px 0;
-        }
-        .c2 p {
-            font-size: 10px;
-            color: #7f8c8d;
-            margin: 0 0 17px 0;
-        }
-        .c2 button {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 10px;
-            width: 100%;
-        }
-        .c2 button:hover {
-            background: #2980b9;
-        }
+      /*composantes :bouton,image,h2 titre,h3 titre,description,badge,card,price,frame*/
 
-        .c3 {
-            width: 300px;
-            border: 3px solid #e74c3c;
-            padding: 20px;
-            margin: 20px;
-            background: white;
-            border-radius: 8px;
-            position: relative;
-        }
-        .c3 img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        .c3 h2 {
-            font-size: 24px;
-            color: #2c3e50;
-            margin: 15px 0 10px 0;
-            font-weight: 600;
-        }
-        .c3 p {
-            font-size: 14px;
-            color: #7f8c8d;
-            margin: 0 0 15px 0;
-            line-height: 1.6;
-        }
-        .p2 {
-            font-size: 21px;
-            color: #27ae60;
-            font-weight: bold;
-            margin: 0 0 15px 0;
-        }
-        .c3 button {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 14px;
-            width: 100%;
-        }
-        .c3 button:hover {
-            background: #2980b9;
-        }
+      body {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /*les 4 classes en dessous j'ai ajouter comme classe utilitaires et le reste des propriété qui étais similaire je l'ai ai
+       mis dans card-frame */
+      .border-gray {
+        border: 1px solid #b6b6be;
+      }
+
+      .border-red {
+        border: 3px solid #e74c3c;
+      }
+
+      .display-flex {
+        display: flex;
+        gap: 15px;
+      }
+
+      .position-relative {
+        position: relative;
+      }
+
+      .card-frame {
+        width: 300px;
+        padding: 20px;
+        margin: 20px;
+        background: white;
+        border-radius: 8px;
+      }
+
+      /*changement de classe en ajoutant card-badge,aulieux de juste badge*/
+      .card-badge {
+        display: inline-block;
+        background: #e74c3c;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 3px;
+        font-size: 10px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+
+      /*l'image du produit 1 et 3 peuvent être jumeler mais le produit 2 rend l'image trop grande pour l'effect qu'on veut donner avec le mini 
+produit, j'ai donc garder la même classe mais ajouter small, pour le petit produit */
+      .card-image-small {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .card-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      /*le titre du produit 1 et 3 peuvent être jumeler mais le produit 2 jumeler rend la typo trop grande, j'ai donc garder la même classe
+mais ajouter small, pour le petit produit */
+      .card-title-small {
+        font-size: 14px;
+        color: #2c3e50;
+        margin: 0 0 8px 0;
+      }
+
+      .card-title {
+        font-size: 24px;
+        color: #2c3e50;
+        margin: 15px 0 10px 0;
+        font-weight: 600;
+      }
+
+      /*carte 1 et 3 ont ces propriétés similaires dont (.p2) et (.c .p)*/
+      .card-price {
+        font-size: 20px;
+        color: #27ae60;
+        font-weight: bold;
+        margin: 0 0 15px 0;
+      }
+
+      /*carte 2 a des mesure un peu différente mais les même propriétés , ont peu donc le jumeler avec les deux autres cartes */
+      .card-description {
+        font-size: 14px;
+        color: #7f8c8d;
+        margin: 0 0 15px 0;
+        line-height: 1.6;
+      }
+
+      /*bouton de carte et hover ont les même propriétés */
+      .card-button {
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 100%;
+      }
+
+      .card-button:hover {
+        background: #2980b9;
+      }
     </style>
-</head>
-<body>
-    <div class="c">
-   
-        <img src="https://static.photos/technology/320x240/37" alt="Produit">
-        <h2>Nom du Produit 1</h2>
-        <p>Description courte du produit qui donne envie d'acheter.</p>
-        <div class="p">1149,99 $</div>
-        <button>Ajouter au panier</button>
+  </head>
+
+  <body>
+    <div class="card-frame border-gray">
+      <img
+        class="card-image"
+        src="https://static.photos/technology/320x240/37"
+        alt="Produit"
+      />
+      <h2 class="card-title">Nom du Produit 1</h2>
+      <p class="card-description">
+        Description courte du produit qui donne envie d'acheter.
+      </p>
+      <div class="card-price">1149,99 $</div>
+      <button class="card-button">Ajouter au panier</button>
     </div>
 
-
-    <div class="c2">
-        <img src="https://static.photos/technology/100x100/130" alt="Mini produit">
-        <div>
-            <h3>Nom du produit mini 2</h3>
-            <p>Description rapide</p>
-            <button>Ajouter au panier</button>
-        </div>
+    <div class="card-frame border-gray display-flex">
+      <img
+        class="card-image-small"
+        src="https://static.photos/technology/100x100/130"
+        alt="Mini produit"
+      />
+      <div>
+        <h3 class="card-title-small">Nom du produit mini 2</h3>
+        <p class="card-description">Description rapide</p>
+        <button class="card-button">Ajouter au panier</button>
+      </div>
     </div>
 
-    <div class="c3">
-        <span class="badge">NOUVEAU</span>
-        <img src="https://static.photos/gaming/320x240/30" alt="Produit">
-        <h2>Nom du Produit 3</h2>
-        <p>Description courte du produit qui donne envie d'acheter.</p>
-        <div class="p2">1120,99 $</div>
-        <button>Ajouter au panier</button>
+    <div class="card-frame border-red position-relative">
+      <span class="card-badge">NOUVEAU</span>
+      <img
+        class="card-image"
+        src="https://static.photos/gaming/320x240/30"
+        alt="Produit"
+      />
+      <h2 class="card-title">Nom du Produit 3</h2>
+      <p class="card-description">
+        Description courte du produit qui donne envie d'acheter.
+      </p>
+      <div class="card-price">1120,99 $</div>
+      <button class="card-button">Ajouter au panier</button>
     </div>
-</body>
+  </body>
 </html>
